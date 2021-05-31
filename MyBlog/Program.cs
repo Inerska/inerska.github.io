@@ -10,6 +10,7 @@
         public static async Task<int> Main(string[] args) =>
           await Bootstrapper.Factory
               .CreateWeb(args)
+              .AddHostingCommands()
               .RunAsync()
               .ConfigureAwait(true);
 
