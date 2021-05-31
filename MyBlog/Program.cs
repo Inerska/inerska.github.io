@@ -1,12 +1,17 @@
-﻿using System;
-
-namespace MyBlog
+﻿namespace MyBlog
 {
-    class Program
+    using System;
+    using System.Threading.Tasks;
+    using Statiq.App;
+    using Statiq.Web;
+
+    public static class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        public static async Task<int> Main(string[] args) =>
+          await Bootstrapper.Factory
+              .CreateWeb(args)
+              .RunAsync()
+              .ConfigureAwait(true);
+
     }
 }
