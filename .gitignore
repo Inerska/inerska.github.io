@@ -1,5 +1,8 @@
 MyBlog/obj
 MyBlog/bin
+MyBlog/cache
+MyBlog/temp
+MyBlog/output
 
 .vscode
 .vs
