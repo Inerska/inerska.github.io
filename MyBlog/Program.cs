@@ -13,6 +13,5 @@
               .AddHostingCommands()
               .RunAsync()
               .ConfigureAwait(true);
-
     }
 }
