@@ -4,13 +4,17 @@
     @Html.Partial("_partials/_head")
 </head>
 <body>
-    @Html.Partial("_partials/_header")
+    <header>
+        @Html.Partial("_partials/_header")
+    </header>
 
     <main>
         @RenderBody()
     </main>
 
-    @Html.Partial("_partials/_footer")
+    <footer>
+            @Html.Partial("_partials/_footer")
+    </footer>
     @Html.Partial("_partials_footersrc")
 </body>
 </html>
