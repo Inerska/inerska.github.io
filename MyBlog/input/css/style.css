@@ -7,5 +7,15 @@ a,
 button,
 li,
 text {
-  font-family: 'Gilroy', sans-serif
+  font-family: 'Gilroy', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.444;
+  word-wrap: break-word;
+}
+
+.feed-article{
+  display: flex;
+  padding: 30px 0;
 }
