@@ -6,9 +6,9 @@
     </head>
 
     <body>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
+        <div class="grid md:grid-cols-3 gap-4">
+            <div></div>
+            <div>
                 <header>
                     @Html.Partial("_partials/_header")
                 </header>
@@ -21,7 +21,7 @@
                     @Html.Partial("_partials/_footer")
                 </footer>
             </div>
-            <div class="col-md-3"></div>
+            <div></div>
         </div>
         @Html.Partial("_partials/_footersrc")
     </body>
