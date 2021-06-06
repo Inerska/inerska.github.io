@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    @Html.Partial("_partials/_head")
-</head>
-<body>
-    <header>
-        @Html.Partial("_partials/_header")
-    </header>
 
-    <main>
-        @RenderBody()
-    </main>
+    <head>
+        @Html.Partial("_partials/_head")
+    </head>
 
-    <footer>
-        @Html.Partial("_partials/_footer")
-    </footer>
-    @Html.Partial("_partials/_footersrc")
-</body>
+    <body>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <header>
+                    @Html.Partial("_partials/_header")
+                </header>
+
+                <main>
+                    @RenderBody()
+                </main>
+
+                <footer>
+                    @Html.Partial("_partials/_footer")
+                </footer>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        @Html.Partial("_partials/_footersrc")
+    </body>
+
 </html>
