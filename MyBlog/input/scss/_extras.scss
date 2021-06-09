@@ -1,9 +1,10 @@
 header {
     &.masthead {
+        background-attachment: fixed;
+        background-position: center;
         background-repeat: no-repeat;
-        background-origin: padding-box;
         background-size: cover;
-        background-attachment: scroll;
+        background-origin: padding-box;
         background-position: center center;
     }
     &.masthead .subheading {
