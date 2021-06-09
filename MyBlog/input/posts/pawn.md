@@ -1,27 +1,32 @@
-# Le Pawn est désigné comme un langage typé
+# Le Pawn, etc.....
+## Utilisé pour les serveurs SAMP ....
 ```c
-CMD:respawn(playerid, params[])
+#include <YSI_Coding\y_hook>
+hook OnPlayerConnect(playerid)
 {
-    static
-    userid;
-
-    if(!IsPunAdmin(playerid, ADMIN_RANK_ID_MODO1))
-    return errorMessage(playerid, MESSAGE_ERROR_CMD_NOTALLOWED);
-
-    if (sscanf(params, "u", userid))
-    return SendClientMessage(playerid, COLOR_USAGE, "/respawn <PlayerID/PlayerName>");
-
-    if (userid == INVALID_PLAYER_ID)
-    return SendClientMessage(playerid, COLOR_ERROR, MESSAGE_ERROR_PLAYER_DISCONNECTED);
-
-    RespawnPlayer(userid);
-    SetPlayerPos(userid, 1743.9965, -1863.9811, 13.5744);
-    SetPlayerFacingAngle(userid, 180.0000);
+    TogglePlayerSpectating(playerid, 1);
+    //TODO: Handle skin
+    SetSpawnInfo(playerid, 0, 123, 235.2325, -1422.4965, 5.0315, 0,
+                 0, 0,
+                 0, 0,
+                 0, 0);
     
-    SendClientMessage(playerid, COLOR_YELLOW, "Vous avez respawn le joueur %s", GetName(userid, true));
-    SendClientMessage(userid, COLOR_YELLOW, "Vous avez été respawn par l'Administrateur %s", GetName(playerid, true));
-
-    return 1;
+    inline OnAccountChecked()
+    {
+        if (cache_num_rows() > 0)
+        {
+            Dialog_ShowCallback(playerid, using public DIALOG_LOGIN<iiiis>, DIALOG_STYLE_PASSWORD, "Connexion", "Pour vous connecter, merci de renseigner votre mot de passe", "Valider", "Annuler");
+        }
+        else
+        {
+            Dialog_ShowCallback(playerid, using public DIALOG_REGISTER<iiiis>, DIALOG_STYLE_PASSWORD, "Inscription", "Bienvenue\nPour commencer votre aventure veuillez crÃ©er un mot de passe.\n\n{6A7374}4 lettres minimum, 2 chiffres minimum 20 caractÃ¨res maximum.", "Confirmer", "Annuler");
+        }
+    }
+    
+    MySQL_TQueryInline(gSQL_CONNECTION, using inline OnAccountChecked, "select null from accounts where username = '%e' LIMIT 1", GetName(playerid));
+    
+    return Y_HOOKS_CONTINUE_RETURN_1;
 }
 ```
-> Exemple de code en Pawn, commande joueur de respawn
+> Exemple de code en Pawn permettant la connexion/inscription du joueur
+> **Middleware client très intéressant**
