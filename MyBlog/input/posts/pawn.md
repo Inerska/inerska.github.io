@@ -1,3 +1,7 @@
+---
+Tags: SAMP
+---
+
 # Le Pawn, etc.....
 ## Utilisé pour les serveurs SAMP ....
 ```c
