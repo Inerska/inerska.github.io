@@ -14,7 +14,7 @@
     @if (!string.IsNullOrEmpty(excerpt))
     {
         @Html.Raw(excerpt)
-        <p class="small">
+        @*<p class="small">
             <a href="@Context.GetLink(Model)">
                 <span>Read the article</span>
                 <svg xmlns="http://www.w3.org/2000/svg" style="height:25px;width:25px;" viewBox="0 0 20 20" fill="currentColor">
@@ -23,6 +23,6 @@
                     clip-rule="evenodd" />
                 </svg>
             </a>
-        </p>
+        </p>*@
     }
 </div>
