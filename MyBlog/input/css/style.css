@@ -48,3 +48,15 @@ a{
     background-color: #fff !important;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.has-bg-dark{
+    background: #000;
+}
+
+footer *{
+    color: #fff !important;
+}
+
+footer .underneath{
+    border-top: 1px solid #42425a;
+}
