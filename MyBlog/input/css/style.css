@@ -1,5 +1,5 @@
 body{
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: "Poppins", "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 a{
@@ -20,7 +20,7 @@ a{
     margin-bottom: 60px !important;
     font-size: 44px !important;
     letter-spacing: -.5px;
-    font-family: "Montserrat", "Helvetica Neue", "Segoe UI", sans-serif;
+    font-family: "Poppins", "Montserrat", Arial, Helvetica, sans-serif;
     font-weight: 400;
     text-rendering: optimizeLegibility;
 }
