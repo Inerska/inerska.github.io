@@ -1,8 +1,8 @@
 @model IDocument
 
-<a class="feed-article" href="@Context.GetLink(Model)">
-    <section>
-        <header class="feed-article__eyebrow">@Model.GetDateTime(WebKeys.Published).ToLongDateString() / #pawn</header>
+<a href="@Context.GetLink(Model)">
+    <div class="feed-article">
+        <span class="feed-article__eyebrow">@Model.GetDateTime(WebKeys.Published).ToLongDateString() / #pawn</span>
         <h3 class="feed-article__title">@Html.DocumentLink(Model)</h3>
-    </section>
+    </div>
 </a>
