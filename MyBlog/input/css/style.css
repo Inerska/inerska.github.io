@@ -2,6 +2,10 @@ body{
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
+a{
+    color: inherit;
+}
+
 .has-bg-image{
     background-image: url("../assets/hero-bg.jpg");
 
@@ -26,7 +30,7 @@ body{
     padding: 30px 0;
 }
 
-a .feed-article__eyebrow{
+.feed-article__eyebrow{
     margin-bottom: 10px;
     color: #414141;
     font-size: 14px;
@@ -34,7 +38,7 @@ a .feed-article__eyebrow{
     text-transform: uppercase;
 }
 
-a .feed-article__title{
+.feed-article__title{
     margin-bottom: 0px;
     font-size: 32px;
     color: #414141;
