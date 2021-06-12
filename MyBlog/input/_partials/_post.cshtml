@@ -1,19 +1,8 @@
 @model IDocument
 
-@{
-    string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
-}
-
-<div class="post-preview">
-    <h2 class="post-title">@Html.DocumentLink(Model)</h2>
-    @if (Model.ContainsKey("Lead"))
-    {
-        <div class="post-subtitle">@Model.GetString("Lead")</div>
-    }
-    <p class="post-meta">Published on @Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>
-    @if (!string.IsNullOrEmpty(excerpt))
-    {
-        @Html.Raw(excerpt)
-        <p class="small"><a href="@Context.GetLink(Model)">Read more...</a></p>
-    }
-</div>
+<a class="feed-article" href="@Context.GetLink(Model)">
+    <section>
+        <header class="feed-article__eyebrow">@Model.GetDateTime(WebKeys.Published).ToLongDateString() / #pawn</header>
+        <h3 class="feed-article__title ">@Html.DocumentLink(Model)</h3>
+    </section>
+</a>
