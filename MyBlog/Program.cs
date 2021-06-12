@@ -1,6 +1,5 @@
 ﻿namespace MyBlog
 {
-    using System;
     using System.Threading.Tasks;
     using Statiq.App;
     using Statiq.Web;
