@@ -8,6 +8,7 @@ a{
 
 .has-bg-image{
     background-image: url("../assets/hero-bg.jpg");
+    z-index: 2;
 
     background-attachment: fixed;
     background-position: center;
@@ -42,4 +43,9 @@ a{
     margin-bottom: 0px;
     font-size: 32px;
     color: #414141;
+}
+
+.bg-light{
+    background-color: #fff !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
