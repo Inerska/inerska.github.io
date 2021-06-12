@@ -1,26 +1,24 @@
+Order: 0
+ArchiveSources: => GetString("PostSources")
+ArchiveFilter: => GetBool("IsPost")
+ArchiveDestination: >
+  => GetInt("Index") <= 1 ? $"index.html" : $"page/{GetInt("Index")}.html"
+ArchivePageSize: 3
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+ArchiveTitle: => GetString("Title")
+---
 <section class="section">
     <h1 class="is-section-title">All posts</h1>
-    <div class="container">
-
+    <div class="container articles">
+        <!--
         <a class="feed-article">
             <section>
-                <header></header>
-                <h3>Some text here</h3>
+                <header class="feed-article__eyebrow">jun 01 / #pawn</header>
+                <h3 class="feed-article__title ">Some text here</h3>
             </section>
         </a>
-
-        <a class="feed-article">
-            <section>
-                <header></header>
-                <h3>Some text here</h3>
-            </section>
-        </a>
-
-        <a class="feed-article">
-            <section>
-                <header></header>
-                <h3>Some text here</h3>
-            </section>
-        </a>
+-->
+        @Html.Partial("/_posts.cshtml", Document)
     </div>
 </section>

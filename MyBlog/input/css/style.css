@@ -1,3 +1,7 @@
+body{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
 .has-bg-image{
     background-image: url("../assets/hero-bg.jpg");
 
@@ -18,6 +22,20 @@
 }
 
 .feed-article{
-    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
     padding: 30px 0;
+}
+
+a .feed-article__eyebrow{
+    margin-bottom: 10px;
+    color: #414141;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+a .feed-article__title{
+    margin-bottom: 0px;
+    font-size: 32px;
+    color: #414141;
 }
