@@ -6,3 +6,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.is-section-title{
+    color: #202124 !important;
+    margin-bottom: 60px !important;
+    font-size: 44px !important;
+    letter-spacing: -.5px;
+    font-family: "Montserrat", "Helvetica Neue", "Segoe UI", sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+.feed-article{
+    border-top: 1px solid #d7d7d7;
+    padding: 30px 0;
+}
