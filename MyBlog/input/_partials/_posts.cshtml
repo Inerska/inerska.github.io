@@ -2,7 +2,7 @@
 
 @foreach (IDocument post in Model.GetChildren())
 {
-    @Html.Partial("_post.cshtml", post)
+    @Html.Partial("_partials/_post", post)
 }
 
 @{
