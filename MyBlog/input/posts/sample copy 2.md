@@ -2,6 +2,7 @@ Title: Connexion SQL avec l'include mysql
 Lead: Yay for examples!
 Published: 12/13/2014
 Tag: Pawn
+Author: Alexis C. GRIDEL
 ---
 
 ### Connexion SQL avec l'include mysql

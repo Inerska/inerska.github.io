@@ -8,7 +8,7 @@ a{
 }
 
 .has-bg-image{
-    background-image: url("../assets/hero-bg.bmp");
+    background-image: url("../assets/hero-bg.png");
 
     background-attachment: fixed;
     background-position: center;
