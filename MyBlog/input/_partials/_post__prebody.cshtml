@@ -1,0 +1,29 @@
+@Model IDocument
+
+<section class="container @*is-max-desktop*@ content__spacing feed-article__top">
+    <p class="mb-5">@Model.GetString("Tag")</p>
+    <h1 class="pb-5">Rediscover your city through a new Lens this summer</h1>
+    <div class="feed-article__metas">
+        <div class="is-flex is-justify-content-space-between">
+            <div class="is-flex is-align-items-center">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 20 20"
+                        fill="#000">
+                        <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p class="article-meta__published-date">@Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>
+                </div>
+                <p class="article-meta__read-time">3 mins read</p>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 20 20" fill="#000">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg>
+                <p class="article-meta__author">@Model.GetString("Author")</p>
+            </div>
+        </div>
+    </div>
+</section>
