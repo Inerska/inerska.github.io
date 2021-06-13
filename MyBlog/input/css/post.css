@@ -72,7 +72,7 @@ blockquote{
     font-weight: 300;
 }
 
-.article-meta__read-time::before{
+.article-meta__author__div::before{
     content: "·";
     display: inline-block;
     margin: 0 10px;

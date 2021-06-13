@@ -2,7 +2,9 @@
 
 <section class="container content__spacing feed-article__top">
     <p class="mb-5 article-meta__tag">@Model.GetString("Tag")</p>
-    <a href="@Context.GetLink(Model)"><h1>@Html.DocumentLink(Model)</h1></a>
+    <a href="@Context.GetLink(Model)">
+        <h1>@Html.DocumentLink(Model)</h1>
+    </a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
             <div class="is-flex is-align-items-center">
@@ -15,14 +17,14 @@
                     </svg>
                     <p class="article-meta__published-date">@Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>
                 </div>
-                <p class="article-meta__read-time">3 mins read</p>
-            </div>
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 20 20" fill="#000">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd" />
-                </svg>
-                <p class="article-meta__author">@Model.GetString("Author")</p>
+                <div class="article-meta__author__div">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 20 20"
+                        fill="#000">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p class="article-meta__author">@Model.GetString("Author")</p>
+                </div>
             </div>
         </div>
     </div>
