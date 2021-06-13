@@ -64,4 +64,5 @@ OnQueryError(errorid, const error[], const callback[], const query[], MySQL:hand
 ```
 
 > Vous pouvez le voir, `OnQueryError` `MySQLDisconnect` `MysqlConnect` sont des callbacks
+
 Utilisez les avec **parsimonie**, faites bien attention !
