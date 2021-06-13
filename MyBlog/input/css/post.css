@@ -91,3 +91,7 @@ blockquote{
     letter-spacing: 1.5px;
     line-height: 21px;
 }
+
+.feed-article__top a{
+    color: inherit;
+}

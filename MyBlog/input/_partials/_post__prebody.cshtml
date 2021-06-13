@@ -1,8 +1,8 @@
 @Model IDocument
 
-<section class="container @*is-max-desktop*@ content__spacing feed-article__top">
+<section class="container content__spacing feed-article__top">
     <p class="mb-5 article-meta__tag">@Model.GetString("Tag")</p>
-    <a><h1 class="pb-5">Rediscover your city through a new Lens this summer</h1></a>
+    <a href="@Context.GetLink(Model)"><h1>@Html.DocumentLink(Model)</h1></a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
             <div class="is-flex is-align-items-center">
