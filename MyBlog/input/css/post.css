@@ -53,12 +53,15 @@ h3{
 }
 
 p{
-    font-family: 'Roboto',Arial,Helvetica,sans-serif;
-    font-size: 16px;
-    color: #202124;
-    font-weight: 300;
-    word-wrap: break-word;
-    letter-spacing: 0;
-    line-height: 1.625;
-    margin-bottom: 10px;
+    all: unset;
+}
+
+.number{all: unset;}
+
+blockquote{
+    font-size: 14px !important;
+    border-left: 8px solid rebeccapurple;
+    padding-left: 20px !important;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
