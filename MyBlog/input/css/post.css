@@ -19,3 +19,8 @@ footer .underneath{
 .has-bg-dark{
     background: #000;
 }
+
+.content__spacing{
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
