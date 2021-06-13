@@ -82,7 +82,7 @@ blockquote{
     border-bottom: 1px solid #42425a;
 }
 
-.article-meta__published-date, .article-meta__author, .article-meta__read-time{
+.article-meta__published-date, .article-meta__author, .article-meta__read-time, .article-meta__tag{
     color: #000 !important;
     text-transform: uppercase;
     font-family: "Poppins", "Montserrat", Arial, Helvetica, sans-serif;
