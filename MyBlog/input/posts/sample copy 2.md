@@ -3,6 +3,12 @@ Lead: Yay for examples!
 Published: 12/13/2014
 Tag: Pawn
 ---
+
+# Connexion *SQL* avec l'include __MySQL__
+
+> Bien que cela semble difficile à première vue, le simple fait de vouloir créer son gamemode à partir de zéro est le début même de ce système pourtant basique.
+A travers cette article, je vous expliquerais comment tout mettre en œuvre pour arriver à vos fins, et finir à créer votre système d'inscriptions et de connexion sur votre magnifique serveur SAMP.
+
 ```c
 new MySQL:gSQL_CONNECTION;
 
