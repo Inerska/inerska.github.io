@@ -1,21 +1,21 @@
-<section class="page-section page-section">
-    <div class="page-section_container container">
-        <div class="page-section_row row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-md-9">
-                        <h1 class="text-primary">@(Model.GetString(Keys.Title) ?? Model.GetString(Keys.Title))</h1>
-                        <div class="bh">
-                            <time datetime="@Model.GetString(WebKeys.Published)" itemprop="datePublished">@Model.GetDateTime(WebKeys.Published).ToString("MMMM dd, yyyy")</time>
-                        </div>
-                        <hr />
-                        @RenderBody()
-                    </div>
-                    <div class="col-md-3">
-                        Archives
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        @Html.Partial("_partials/_post__head")
+    </head>
+
+    <body>
+        @Html.Partial("_partials/_post__header")
+        <main class="container">
+            @RenderBody()
+        </main>
+        @Html.Partial("_partials/_footer")
+
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js"
+            data-no-mirror></script>
+        <script src="https://cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    </body>
+
+</html>

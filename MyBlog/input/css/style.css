@@ -51,7 +51,7 @@ a{
 }
 
 .has-bg-dark{
-    background: #000;
+    background: #000 !important;
 }
 
 footer *{
