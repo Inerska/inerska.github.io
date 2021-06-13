@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 @import url('http://fonts.googleapis.com/css?family=Roboto');
+@import url('https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css');
 
 body{
-    font-family: "Poppins", "Montserrat", Arial, Helvetica, sans-serif;
+    font-family: "Gilroy", "Poppins", "Montserrat", Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
+    font-weight: 500;
 }
 
 footer *{
@@ -35,9 +37,9 @@ h1, h2{
     line-height: 1.18182;
     text-rendering: optimizeLegibility;
     color: #202124;
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 20px;
-    font-family: 'Open Sans','Roboto',Arial,Helvetica,sans-serif;
+    font-family: "Gilroy", 'Open Sans','Roboto',Arial,Helvetica,sans-serif;
 }
 
 h3{
@@ -47,8 +49,8 @@ h3{
     font-size: 32px;
     letter-spacing: 0;
     color: #202124;
-    font-family: 'Open Sans','Roboto',Arial,Helvetica,sans-serif;
-    font-weight: 400;
+    font-family: "Gilroy", 'Open Sans','Roboto',Arial,Helvetica,sans-serif;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
