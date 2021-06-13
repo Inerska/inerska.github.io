@@ -28,14 +28,19 @@ document.addEventListener('scroll', () => {
 const navbarItems = document.querySelectorAll(".navbar-item");
 const navbar = document.getElementById("transparent-source");
 
-function disableTransparent() {
+function disableTransparent() 
+{
     navbar.classList.add("bg-light");
 
     navbarItems.forEach(el => el.classList.remove("has-text-white"));
 }
 
-function enableTransparent() {
-    navbar.classList.remove("bg-light");
+function enableTransparent() 
+{
+    if (window.innerWidth >= 1024)
+    {
+        navbar.classList.remove("bg-light");
 
-    navbarItems.forEach(el => el.classList.add("has-text-white"));
+        navbarItems.forEach(el => el.classList.add("has-text-white"));
+    }
 }
