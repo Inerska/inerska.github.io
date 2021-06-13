@@ -21,20 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-window.onscroll = () => {document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? disableTransparent() : enableTransparent()};
+document.addEventListener('scroll', () => {
+    document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? disableTransparent() : enableTransparent();
+});
 
 const navbarItems = document.querySelectorAll(".navbar-item");
+const navbar = document.getElementById("transparent-source");
 
-function disableTransparent()
-{
-    document.getElementById("transparent-source").classList.add("bg-light");
+function disableTransparent() {
+    navbar.classList.add("bg-light");
 
     navbarItems.forEach(el => el.classList.remove("has-text-white"));
 }
 
-function enableTransparent()
-{
-    document.getElementById("transparent-source").classList.remove("bg-light");
+function enableTransparent() {
+    navbar.classList.remove("bg-light");
 
     navbarItems.forEach(el => el.classList.add("has-text-white"));
 }
