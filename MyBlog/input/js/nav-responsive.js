@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     const navbarItems = document.querySelectorAll(".navbar-item");
 
-    navbarItems.forEach(el => el.classList.add("has-text-white"));
+    window.innerWidth <= 1024 ? disableTransparent() : enableTransparent();
 
     if ($navbarBurgers.length > 0) {
 
@@ -28,17 +28,14 @@ document.addEventListener('scroll', () => {
 const navbarItems = document.querySelectorAll(".navbar-item");
 const navbar = document.getElementById("transparent-source");
 
-function disableTransparent() 
-{
+function disableTransparent() {
     navbar.classList.add("bg-light");
 
     navbarItems.forEach(el => el.classList.remove("has-text-white"));
 }
 
-function enableTransparent() 
-{
-    if (window.innerWidth >= 1024)
-    {
+function enableTransparent() {
+    if (window.innerWidth >= 1024) {
         navbar.classList.remove("bg-light");
 
         navbarItems.forEach(el => el.classList.add("has-text-white"));
