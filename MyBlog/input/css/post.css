@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+
 body{
     font-family: "Poppins", "Montserrat", Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
@@ -25,6 +28,36 @@ footer .underneath{
     padding-bottom: 40px;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 800; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 2.5rem;line-height:44px;margin-bottom:24px;color:#000;}
-strong, p, em{color:#000;}
-blockquote { font-style: italic; color: #6c757d; margin: 16px 40px;}
+h1, h2{
+    margin-bottom: 20px;
+    font-size: 44px;
+    letter-spacing: -.5px;
+    line-height: 1.18182;
+    text-rendering: optimizeLegibility;
+    color: #202124;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Open Sans','Roboto',Arial,Helvetica,sans-serif;
+}
+
+h3{
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    line-height: 1.25;
+    font-size: 32px;
+    letter-spacing: 0;
+    color: #202124;
+    font-family: 'Open Sans','Roboto',Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+p{
+    font-family: 'Roboto',Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: #202124;
+    font-weight: 300;
+    word-wrap: break-word;
+    letter-spacing: 0;
+    line-height: 1.625;
+}
