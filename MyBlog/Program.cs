@@ -10,14 +10,12 @@
         public static async Task<int> Main(string[] args) =>
           await Bootstrapper.Factory
               .CreateWeb(args)
-              .ConfigureSettings(settings => settings["GitHubBranch"] = "main")
               .DeployToGitHubPages(
                   "Inerska",
-                  "inerska.github.io",
+                  "Inerska",
                   Config.FromSetting<string>("GITHUB_TOKEN"),
                   "master"
               )
-              .AddHostingCommands()
               .RunAsync()
               .ConfigureAwait(true);
     }
