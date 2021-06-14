@@ -95,3 +95,7 @@ blockquote{
 .feed-article__top a{
     color: inherit;
 }
+
+.title--link{
+    padding-left:35px;
+}
