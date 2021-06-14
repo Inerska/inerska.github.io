@@ -14,7 +14,8 @@
               .DeployToGitHubPages(
                   "Inerska",
                   "inerska.github.io",
-                  Config.FromSetting<string>("GITHUB_TOKEN")
+                  Config.FromSetting<string>("GITHUB_TOKEN"),
+                  "master"
               )
               .AddHostingCommands()
               .RunAsync()
