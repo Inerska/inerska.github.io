@@ -100,3 +100,7 @@ blockquote{
     height: 16px;
     width: 16px;
 }
+
+.body__fullheight{
+    min-height:100vh;
+}
