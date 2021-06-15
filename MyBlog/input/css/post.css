@@ -95,3 +95,8 @@ blockquote{
 .feed-article__top a{
     color: inherit;
 }
+
+.is-small__icon{
+    height: 16px;
+    width: 16px;
+}
