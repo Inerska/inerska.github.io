@@ -12,7 +12,7 @@
               .CreateWeb(args)
               .DeployToGitHubPages(
                   "Inerska",
-                  "web_myblog",
+                  "inerska.github.io",
                   Config.FromSetting<string>("GITHUB_TOKEN")
               )
               .RunAsync()
