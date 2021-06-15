@@ -10,12 +10,10 @@
         public static async Task<int> Main(string[] args) =>
           await Bootstrapper.Factory
               .CreateWeb(args)
-              /*.DeployToGitHubPages(
-                  "Inerska",
-                  "inerska.github.io",
-                  Config.FromSetting<string>("GITHUB_TOKEN"),
-                  "master"
-              )*/
+                .DeployToNetlify(
+                Config.FromSetting<string>("NetlifySiteId"),
+                Config.FromSetting<string>("NetlifyAccessToken")
+                )
               .RunAsync()
               .ConfigureAwait(true);
     }
