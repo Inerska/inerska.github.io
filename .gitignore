@@ -6,3 +6,5 @@ MyBlog/node_modules
 
 .vscode
 .vs
+
+appsettings.json
