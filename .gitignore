@@ -3,6 +3,7 @@ MyBlog/bin
 MyBlog/cache
 MyBlog/temp
 MyBlog/node_modules
+MyBlog/output
 
 .vscode
 .vs

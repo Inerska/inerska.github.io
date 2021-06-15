@@ -10,6 +10,11 @@
         public static async Task<int> Main(string[] args) =>
           await Bootstrapper.Factory
               .CreateWeb(args)
+              .DeployToGitHubPages(
+                  "Inerska",
+                  "web_myblog",
+                  Config.FromSetting<string>("GITHUB_TOKEN")
+              )
               .RunAsync()
               .ConfigureAwait(true);
     }
