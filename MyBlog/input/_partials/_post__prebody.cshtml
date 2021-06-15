@@ -23,7 +23,14 @@
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                             clip-rule="evenodd" />
                     </svg>
-                    <p class="article-meta__author">@Model.GetString("Author")</p>
+                    @if (string.IsNullOrEmpty(@Model.GetString("Author")))
+                    {
+                        <p class="article-meta__author">Alexis C. GRIDEL</p>
+                    }
+                    else
+                    {
+                        <p class="article-meta__author">@Model.GetString("Author")</p>
+                    }
                 </div>
             </div>
         </div>
