@@ -10,10 +10,6 @@
         public static async Task<int> Main(string[] args) =>
           await Bootstrapper.Factory
               .CreateWeb(args)
-                .DeployToNetlify(
-                Config.FromSetting<string>("NetlifySiteId"),
-                Config.FromSetting<string>("NetlifyAccessToken")
-                )
               .RunAsync()
               .ConfigureAwait(true);
     }
