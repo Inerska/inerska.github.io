@@ -16,6 +16,12 @@ a{
     background-size: cover;
 }
 
+@media (min-width: 481px) { 
+    .has-bg-image{
+        background-attachment: scroll;
+    }
+}
+
 .is-section-title{
     color: #202124 !important;
     margin-bottom: 60px !important;
