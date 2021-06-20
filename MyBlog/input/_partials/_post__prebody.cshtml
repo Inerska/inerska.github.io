@@ -1,6 +1,6 @@
 @model IDocument
 
-<section class="container content__spacing feed-article__top">
+<section class="container content__spacing feed-article__top section">
     <p class="mb-5 article-meta__tag">@Model.GetString("Tag")</p>
     <a href="@Context.GetLink(Model)">
         <h1>@Html.DocumentLink(Model)</h1>
