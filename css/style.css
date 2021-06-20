@@ -10,6 +10,43 @@ a{
 .has-bg-image{
     background: url("../assets/hero-bg.webp") 50%/cover;
     background-attachment: fixed;
+
+    animation: bone__loading--animation 1.3s ease-out;
+}
+
+.bone--animation{
+    animation: bone__bounce--animation 5s ease-out infinite normal;
+}
+
+@keyframes bone__loading--animation{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes bone__bounce--animation{
+    0% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+    
+      25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    
+      60% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+    
+      100% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
 }
 
 .is-section-title{
