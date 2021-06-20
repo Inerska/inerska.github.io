@@ -10,6 +10,17 @@ a{
 .has-bg-image{
     background: url("../assets/hero-bg.webp") 50%/cover;
     background-attachment: fixed;
+
+    animation: bone__loading--animation 1.3s;
+}
+
+@keyframes bone__loading--animation{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .is-section-title{
