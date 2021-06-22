@@ -71,15 +71,19 @@
     </div>
 </section>
         <main class="container body__fullheight">
-            
-<section class="container content__spacing" id="about__content">
-    <p>Hello 👋 I am Alexis Chân GRIDEL, I'm 18 years old, I am currently a student.
-        I am a .NET lover and an open-source enthusiast, my goal is to become a Microsoft MVP thanks to my blog and my
-        desire to spread my knowledge about .NET technologies, etc.
-
-        I hope you will appreciate my content and you will be following it.
-        You can as well take a look to my <a href="#" class="has-text-info">resume</a>, I won't be a student forever.
-    </p>
+            <section class="container content__spacing" id="contact__content">
+    <form action="https://formspree.io/alexis.gridel@pm.me" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" />
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="user_mail" />
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message"></textarea>
+        <button type="submit">Send your message</button>
+        <input type="hidden" name="_next" value="/thank-you" />
+        <input type="hidden" name="_subject" value="New submission from contact form" />
+        <input type="hidden" name="_cc" value="another-email@email.com" />
+    </form>
 </section>
         </main>
         <footer class="footer has-bg-dark">
