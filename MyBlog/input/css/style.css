@@ -104,3 +104,8 @@ footer .underneath{
 .body__fullheight{
     min-height:100vh;
 }
+
+.content__spacing{
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
