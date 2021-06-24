@@ -1,0 +1,20 @@
+@model IDocument
+
+<section class="section container is-max-desktop">
+    <div id="disqus_thread"></div>
+    <script>
+
+        var disqus_config = function () {
+            this.page.url = '@Context.GetLink(Model, true)';
+            this.page.identifier = '@Model.Destination.FileNameWithoutExtension.FullPath';
+        };
+
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://EXAMPLE.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comment section.</a></noscript>
+</section>
