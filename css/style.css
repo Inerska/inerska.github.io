@@ -8,7 +8,7 @@ a{
 }
 
 .has-bg-image{
-    background: url("../assets/hero-bg.webp") 50%/cover;
+    background: url("../assets/hero-bg.jpg") 50%/cover;
     background-attachment: fixed;
 
     animation: bone__loading--animation 1.3s ease-out;
