@@ -1,3 +1,4 @@
+@*
 @model IDocument
 
 <section class="section container is-max-desktop">
@@ -9,6 +10,9 @@
             this.page.identifier = '@Model.Destination.FileNameWithoutExtension.FullPath';
         };
 
+        console.log('@Context.GetLink(Model, true)')
+        console.log('@Model.Destination.FileNameWithoutExtension.FullPath')
+
         (function () {
             var d = document, s = d.createElement('script');
             s.src = 'https://EXAMPLE.disqus.com/embed.js';
@@ -18,3 +22,6 @@
     </script>
     <noscript>Please enable JavaScript to view the comment section.</a></noscript>
 </section>
+
+
+*@
