@@ -1,7 +1,5 @@
 title: Pawn moderne » Les conventions de nommage
-
 tag: Pawn
-
 ---
 
 ​	Généralement, en Pawn comme en tout autre langage de programmation, il est important d'être consistant, de garder les mêmes règles dans quelconque projet ou programme lambda. Afin que le code soit plus lisible, et compréhensible aux autres ou aux contributeurs, il est important de respecter des conventions de nommages.
