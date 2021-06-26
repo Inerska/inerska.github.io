@@ -109,3 +109,7 @@ footer .underneath{
     padding-top: 100px;
     padding-bottom: 40px;
 }
+
+.hero-body .container p::selection {
+    background-color: #ffd9fa52 !important;
+}
