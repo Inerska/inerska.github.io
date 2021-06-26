@@ -58,9 +58,9 @@
 </nav>
         
 <section class="container content__spacing feed-article__top section">
-    <p class="mb-5 article-meta__tag">C</p>
-    <a href="/posts/modern-cmacro-generict">
-        <h1><a href="/posts/modern-cmacro-generict">Modern C &#xBB; _Generic(T)</a></h1>
+    <p class="mb-5 article-meta__tag">Pawn</p>
+    <a href="/posts/pawn-modernenamingconventions">
+        <h1><a href="/posts/pawn-modernenamingconventions">Pawn moderne &#xBB; Les conventions de nommage</a></h1>
     </a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
@@ -88,43 +88,90 @@
     </div>
 </section>
         <main class="container is-max-desktop content__spacing body__fullheight section">
-            <p>​	Normally, in C, when you want to overload a function, you have to create the same for the amount of types you want to handle.</p>
-<pre><code class="language-c">double mind(double, double);
-int mini(int, int);
-</code></pre>
-<pre><code class="language-c">int
-main(void)
+            <p>​	Généralement, en Pawn comme en tout autre langage de programmation, il est important d'être consistant, de garder les mêmes règles dans quelconque projet ou programme lambda. Afin que le code soit plus lisible, et compréhensible aux autres ou aux contributeurs, il est important de respecter des conventions de nommages.</p>
+<blockquote>
+<p>Cet article est non-exhaustif et tire beaucoup de ses notions et exemples du guide d'open.mp (<a href="https://open.mp/fr/docs/scripting/language/Style">https://open.mp/fr/docs/scripting/language/Style</a>)</p>
+</blockquote>
+<h3 id="accolades">Accolades</h3>
+<p>On distingue deux écoles concernant les accolades, la méthode dite <code>Allman</code> et la méthode dite <code>K&amp;R</code> qui est tout aussi valable en Pawn.</p>
+<pre><code class="language-c">public OnGameModeInit()
 {
-    double x = 12.5;
-    double y = 22.0;
-    printf(&quot;The min value between 12.5 and 22.0 is %lf\n&quot;, mind(x, y));
+    return 0;
 }
 </code></pre>
-<p>But in modern C (since C11), you can &quot;iterate through types&quot; like a <code>switch</code> but for types, and thanks to that, you can overload a function like in a high-level programming language.</p>
-<pre><code class="language-c">double mind(double, double);
-int mini(int, int);
-
-
-#define min(a, b) _Generic((a), \
-					int: mini(a, b), \
-					double: mind(a, b)\
-				)
-
+<blockquote>
+<p>Méthode Allman</p>
+</blockquote>
+<pre><code class="language-c">public OnGameModeInit(){
+    return 0;
+}
 </code></pre>
-<pre><code class="language-c">int
-main(void)
+<blockquote>
+<p>Méthode K&amp;R</p>
+</blockquote>
+<p>Libre à vous de choisir celle qui vous convient le mieux, cependant, gardez à l'esprit que la consistance est la clé.</p>
+<h3 id="nommage">Nommage</h3>
+<h4 id="fonctions">Fonctions</h4>
+<p>Les fonctions doivent être nommées en <code>PascalCase</code> et écrites en anglais.</p>
+<pre><code class="language-c">inline OnDataRetrieved()
 {
-    int x = 12;
-    int y = 22;
-    printf(&quot;The minimal value between 12 and 22 is %d\n&quot;, min(x, y));
+    cache_get_value_name(0, &quot;password&quot;, password, sizeof password);
+}
+</code></pre>
+<h4 id="variables-globales">Variables globales</h4>
+<p>Les variables globales doivent être utilisées avec le mot clé <code>new</code> et doit être préfixé avec <code>g_Variable</code> ou <code>gVariable</code> tout en utilisant <code>PascalCase</code>.</p>
+<pre><code class="language-c">new bool:gLobbyState = false;
+</code></pre>
+<h4 id="variables-locales">Variables locales</h4>
+<p>Les variables locales quant à elles doivent utiliser <code>camelCase</code>, et doivent être compréhensibles un strict minimum.</p>
+<pre><code class="language-c">// Mauvais
+new string:a[72];
+
+// Correcte
+new string:password[72];
+</code></pre>
+<h4 id="enumerateurs">Énumérateurs</h4>
+<p>Si l'énumérateur est nommé, car facultatif, il doit être préfixé avec <code>E_</code> ou <code>e_</code> et doivent utiliser <code>SCREAMING_SNAKE_CASE</code>.</p>
+<pre><code class="language-c">// Mauvais
+enum ChatType{
+	VeryLow = 0,
+    Low = 1,
+};
+
+// Correcte
+enum E_CHAT_TYPE {
+    ...
+};
+</code></pre>
+<h4 id="macros-et-directive-de-pre-processeurs">Macros et directive de pré-processeurs</h4>
+<p>Les macros doivent utiliser <code>SCREAMING_SNAKE_CASE</code>, quelque soit son utilisation.</p>
+<p>Il est cependant, déconseillé d'utiliser des macros / directives de pré-processeurs au risque de semer confusion à quiconque lira votre code, quelque soit son niveau.</p>
+<pre><code class="language-c">#define internal        static
+#define local_persist   static
+#define global_variable static
+</code></pre>
+<h4 id="documentation">Documentation</h4>
+<p>Les fonctions externes sont encouragées à être documenter pour que celles-ci soient plus facilement utilisables par autrui. <code>// Cette fonction fait X, Y et Z choses et retournes A</code></p>
+<pre><code class="language-c">// Cette fonction prend en paramètre l'ID du véhicule, et retourne l'état du capot du véhicule.
+bool:GetHoodStatus(vehicleid)
+{
+	static
+        engine,
+	lights,
+	alarm,
+	doors,
+	bonnet,
+	boot,
+	objective;
     
-    double dx = 15.5;
-    double dy = 13.2;
-    printf(&quot;The minimal value between 15.5 and 13.2 is %lf\n&quot;, min(dx, dy));
+	GetVehicleParamsEx(vehicleid, engine, lights, alarm, doors, bonnet, boot, objective);
+    
+	if (bonnet != 1)
+        return false;
+    
+	return true;
 }
 </code></pre>
-<p>And with the same function <code>T min(T, T)</code> you can handle multiple types.</p>
-<p>Now you know about <code>_Generic(T)</code> try to overload your personal function like a maximum function <code>max(T, T)</code> with <code>_Generic()</code> macro, glhf.</p>
 
         </main>
         
