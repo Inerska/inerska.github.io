@@ -77,6 +77,10 @@ enum ChatType{
 enum E_CHAT_TYPE {
     ...
 };
+
+enum e_CHAT_TYPE {
+    ...
+};
 ```
 
 #### Macros et directive de pré-processeurs
