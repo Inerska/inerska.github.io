@@ -58,7 +58,7 @@ Les variables locales quant à elles doivent utiliser `camelCase`, et doivent ê
 // Mauvais
 new string:a[72];
 
-// Correcte
+// Correct
 new string:password[72];
 ```
 
@@ -73,7 +73,7 @@ enum ChatType{
     Low = 1,
 };
 
-// Correcte
+// Correct
 enum E_CHAT_TYPE {
     ...
 };
