@@ -2,7 +2,7 @@ title: Modern C » _Generic(T)
 tag: C
 ---
 
-​	Normally, in C, when you want to overload a function, you have to create the same for the amount of type you want to handle.
+​	Normally, in C, when you want to overload a function, you have to create the same for the amount of types you want to handle.
 
 ```c
 double mind(double, double);
@@ -19,7 +19,7 @@ main(void)
 }
 ```
 
-But in modern C, you can "iterate through types" like a `switch` but for types, and thanks to that, you can overload a function like in a high-level programming language.
+But in modern C (since C11), you can "iterate through types" like a `switch` but for types, and thanks to that, you can overload a function like in a high-level programming language.
 
 ```c
 double mind(double, double);
