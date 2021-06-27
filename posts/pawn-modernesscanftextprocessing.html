@@ -58,9 +58,9 @@
 </nav>
         
 <section class="container content__spacing feed-article__top section">
-    <p class="mb-5 article-meta__tag">C</p>
-    <a href="/posts/modern-cmacro-generict">
-        <h1><a href="/posts/modern-cmacro-generict">Modern C &#xBB; _Generic(T)</a></h1>
+    <p class="mb-5 article-meta__tag">Pawn</p>
+    <a href="/posts/pawn-modernesscanftextprocessing">
+        <h1><a href="/posts/pawn-modernesscanftextprocessing">Pawn moderne &#xBB; Utiliser sscanf</a></h1>
     </a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
@@ -88,43 +88,125 @@
     </div>
 </section>
         <main class="container is-max-desktop content__spacing body__fullheight section">
-            <p>​	Normally, in C, when you want to overload a function, you have to create the same for the amount of types you want to handle.</p>
-<pre><code class="language-c">double mind(double, double);
-int mini(int, int);
-</code></pre>
-<pre><code class="language-c">int
-main(void)
+            <p>Ça y'est c'est le grand jour, vous souhaitez aujourd'hui vous attaquer aux commandes, la partie la plus fun d'un gamemode vous ne trouvez pas ? Surtout les commandes d'ordre administratifs, quel plaisir sadique de pouvoir bannir ses meilleurs amis avant même que votre formidable serveur ouvre ses portes.</p>
+<p>Vous choisissez votre processeur de commandes <em>zcmd, i-zcmd, pawn.cmd</em> ou non, et vous commencez à créer la commande de kick. Sachant que vous êtes rusé, vous pensez la commande en premier temps, la commande kick prendra un joueur en paramètre et hop il se fait exclure du serveur !</p>
+<pre><code class="language-c">cmd:kick(playerid, params[])
 {
-    double x = 12.5;
-    double y = 22.0;
-    printf(&quot;The min value between 12.5 and 22.0 is %lf\n&quot;, mind(x, y));
+    Kick(playerid);
+    return 1;
 }
 </code></pre>
-<p>But in modern C (since C11), you can &quot;iterate through types&quot; like a <code>switch</code> but for types, and thanks to that, you can overload a function like in a high-level programming language.</p>
-<pre><code class="language-c">double mind(double, double);
-int mini(int, int);
-
-
-#define min(a, b) _Generic((a), \
-					int: mini(a, b), \
-					double: mind(a, b)\
-				)
-
+<blockquote>
+<p>Problème ici, <code>playerid</code> est l'id du joueur qui exécute la commande, ça vous exclura vous et non le joueur cible! (Ce serait quand même bête)</p>
+</blockquote>
+<h2 id="utiliser-sscanf">Utiliser SSCANF</h2>
+<p>Il est important de noter que sscanf est un &quot;outil&quot; de traitement de textes, il va agir et travailler sur du texte, mais quel lien avec notre commande de kick ? Le but est de savoir si le joueur a bien tapé le nom d'un joueur qu'il souhaite exclure.</p>
+<p><code>Aymane: /kick killer1</code></p>
+<p>On souhaite savoir si Aymane a bien tapé <code>killer1</code>, et qu'il n'ait pas tapé: <code>Aymane: /kick</code>.</p>
+<h4 id="hello-world">Hello world!</h4>
+<pre><code class="language-c">sscanf(&quot;Hello world!&quot;, &quot;ss&quot;, str, str2);
 </code></pre>
-<pre><code class="language-c">int
-main(void)
+<p>Le but ici est de récupérer la partie <code>world!</code>, on spécifie à sscanf les différents <strong>&quot;spécifieurs&quot;</strong> (voire tableau ci-dessous). Ici on spécifie deux <code>string</code> (chaines de caractères). <code>str</code> est assigné &quot;Hello&quot;, <code>str2</code> est assigné &quot;world!&quot;. Simple pas vrai ?</p>
+<table>
+<thead>
+<tr>
+<th>Spécifieurs</th>
+<th>Nom</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code>, <code>d</code></td>
+<td>Integer</td>
+<td><code>1</code>, <code>42</code>, <code>-10</code></td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>Character</td>
+<td><code>a</code>, <code>o</code>, <code>*</code></td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>Logical</td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>Binary</td>
+<td><code>01001</code>, <code>0b1100</code></td>
+</tr>
+<tr>
+<td><code>h</code>, <code>x</code></td>
+<td>Hex</td>
+<td><code>1A</code>, <code>0x23</code></td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>Octal</td>
+<td><code>045</code>, <code>12</code></td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>Number</td>
+<td><code>42</code>, <code>0b010</code>, <code>0xAC</code>, <code>045</code></td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td>Float</td>
+<td><code>0.7</code>, <code>-99.5</code></td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>IEEE Float</td>
+<td><code>0.7</code>, <code>-99.5</code>, <code>INFINITY</code>, <code>-INFINITY</code>, <code>NAN</code>, <code>NAN_E</code></td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>User name/id (bots and players)</td>
+<td><code>Y_Less</code>, <code>0</code></td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>Bot name/id</td>
+<td><code>ShopBot</code>, <code>27</code></td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>Player name/id</td>
+<td><code>Y_Less</code>, <code>42</code></td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>Colour</td>
+<td><code>{FF00AA}</code>, <code>0xFFFFFFFF</code>, <code>444</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Tableau du wiki du repo sscanf d'Y-Less (<a href="https://github.com/Y-Less/sscanf#specifiers">https://github.com/Y-Less/sscanf#specifiers</a>)</p>
+</blockquote>
+<p><em>Pour vous rassurer, je n'ai jamais utiliser tous les spécifieurs proposés par sscanf.</em></p>
+<p>Sachant qu'on souhaite &quot;détecter&quot; un joueur, on récupère le spécifieur <code>r</code> ou bien <code>u</code> si on souhaite ajouter les bots en prime, <em>ce qui est sympa avec ces spécifieurs, c'est qu'ils &quot;détectent&quot; aussi bien les noms que les IDs des joueurs</em>.</p>
+<p>On rajoute ça à notre commande de kick.</p>
+<pre><code class="language-c">cmd:kick(playerid, params[])
 {
-    int x = 12;
-    int y = 22;
-    printf(&quot;The minimal value between 12 and 22 is %d\n&quot;, min(x, y));
+    new targetid;
     
-    double dx = 15.5;
-    double dy = 13.2;
-    printf(&quot;The minimal value between 15.5 and 13.2 is %lf\n&quot;, min(dx, dy));
+    if (sscanf(params, &quot;r&quot;, targetid)) return SendClientMessage(playerid, -1, &quot;USAGE: /kick &lt;player&gt;&quot;); // On met un message au cas où qu'un STAFF ne sache pas utiliser la commande, un petit mémo!
+    
+    Kick(targetid); // On n'oublie pas de changer par targetid
+    
+    return 1; // Et la commande s'est très bien exécutée, yes!
 }
 </code></pre>
-<p>And with the same function <code>T min(T, T)</code> you can handle multiple types.</p>
-<p>Now you know about <code>_Generic(T)</code> try to overload your personal function like a maximum function <code>max(T, T)</code> with <code>_Generic()</code> macro, glhf.</p>
+<p><em>Petite note pour les développeurs C, vous connaissez très probablement la fonction <code>sscanf</code>, il existe un moyen pour éviter de se confondre, vous pouvez utiliser <code>unformat</code> au lieu de <code>sscanf</code>, tout est pareil, seul le nom de la fonction change.</em></p>
+<p>Et voilà, le joueur cible se fera exclure, le pauvre!</p>
+<p>Petit exercice pour vous tester, faites une commande de bannissement (/ban <joueur>).</p>
+<p><em>Fonctions à utiliser:</em> <code>Kick()</code>, <code>Ban()</code>, <code>sscanf()</code></p>
+<blockquote>
+<p>Note: La fonction <code>Ban()</code> ban-ip le joueur cible, et l'ajoute au fichier <code>samp.ban</code>, il faut donc aussi exclure le joueur <code>Kick()</code>.</p>
+</blockquote>
 
         </main>
         
