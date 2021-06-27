@@ -32,21 +32,22 @@ sscanf("Hello world!", "ss", str, str2);
 
  Le but ici est de récupérer la partie `world!`, on spécifie à sscanf les différents **"spécifieurs"** (voire tableau ci-dessous). Ici on spécifie deux `string` (chaines de caractères). `str` est assigné "Hello", `str2` est assigné "world!". Simple pas vrai ?
 
-| Spécifieurs | Nom                             | Exemples                                                |
-| ----------- | ------------------------------- | ------------------------------------------------------- |
-| `i`, `d`    | Integer                         | `1`, `42`, `-10`                                        |
-| `c`         | Character                       | `a`, `o`, `*`                                           |
-| `l`         | Logical                         | `true`, `false`                                         |
-| `b`         | Binary                          | `01001`, `0b1100`                                       |
-| `h`, `x`    | Hex                             | `1A`, `0x23`                                            |
-| `o`         | Octal                           | `045`, `12`                                             |
-| `n`         | Number                          | `42`, `0b010`, `0xAC`, `045`                            |
-| `f`         | Float                           | `0.7`, `-99.5`                                          |
-| `g`         | IEEE Float                      | `0.7`, `-99.5`, `INFINITY`, `-INFINITY`, `NAN`, `NAN_E` |
-| `u`         | User name/id (bots and players) | `Y_Less`, `0`                                           |
-| `q`         | Bot name/id                     | `ShopBot`, `27`                                         |
-| `r`         | Player name/id                  | `Y_Less`, `42`                                          |
-| `m`         | Colour                          | `{FF00AA}`, `0xFFFFFFFF`, `444`                         |
+| Spécifieurs | Nom                                     | Exemples                                                |
+| ----------- | --------------------------------------- | ------------------------------------------------------- |
+| `i`, `d`    | Un chiffre                              | `1`, `42`, `-10`                                        |
+| `c`         | Un caractère                            | `a`, `o`, `*`                                           |
+| `l`         | Un bool                                 | `true`, `false`                                         |
+| `b`         | Un nombre binaire                       | `01001`, `0b1100`                                       |
+| `h`, `x`    | Un nombre héxa                          | `1A`, `0x23`                                            |
+| `o`         | Un octal                                | `045`, `12`                                             |
+| `n`         | Un nombre quelconque                    | `42`, `0b010`, `0xAC`, `045`                            |
+| `f`         | Un nombre flottant                      | `0.7`, `-99.5`                                          |
+| `g`         | IEEE Float                              | `0.7`, `-99.5`, `INFINITY`, `-INFINITY`, `NAN`, `NAN_E` |
+| `u`         | Le pseudo d'un joueur ou son id (+ bot) | `Y_Less`, `0`                                           |
+| `q`         | Le pseudo d'un bot ou son id            | `ShopBot`, `27`                                         |
+| `r`         | Le pseudo d'un joueur ou son id         | `Y_Less`, `42`                                          |
+| `m`         | Une couleur                             | `{FF00AA}`, `0xFFFFFFFF`, `444`                         |
+| `s[taille]` | Un texte                                | `cigarette`, `clope`                                    |
 
 > Tableau du wiki du repo sscanf d'Y-Less (https://github.com/Y-Less/sscanf#specifiers)
 
