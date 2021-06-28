@@ -1,10 +1,8 @@
-@*
 @model IDocument
 
 <section class="section container is-max-desktop">
     <div id="disqus_thread"></div>
     <script>
-
         var disqus_config = function () {
             this.page.url = '@Context.GetLink(Model, true)';
             this.page.identifier = '@Model.Destination.FileNameWithoutExtension.FullPath';
@@ -22,6 +20,3 @@
     </script>
     <noscript>Please enable JavaScript to view the comment section.</a></noscript>
 </section>
-
-
-*@
