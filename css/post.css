@@ -120,7 +120,7 @@ table, th, td {
     padding: 5px 5px;
 }
 
-p::after{
+main .container p::after{
     content: "\a";
     white-space: pre;
 }
