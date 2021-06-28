@@ -58,9 +58,9 @@
 </nav>
         
 <section class="container content__spacing feed-article__top section">
-    <p class="mb-5 article-meta__tag">C</p>
-    <a href="/posts/modern-cmacro-generict">
-        <h1><a href="/posts/modern-cmacro-generict">Modern C &#xBB; _Generic(T)</a></h1>
+    <p class="mb-5 article-meta__tag">Pawn</p>
+    <a href="/posts/pawncommandprocessor">
+        <h1><a href="/posts/pawncommandprocessor">Pawn moderne &#xBB; Les diff&#xE9;rents processeurs de commandes</a></h1>
     </a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
@@ -80,7 +80,7 @@
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                             clip-rule="evenodd" />
                     </svg>
-                        <p class="article-meta__author">Alexis C. GRIDEL</p>
+                        <p class="article-meta__author">Rams</p>
                 </div>
             </div>
         </div>
@@ -88,43 +88,27 @@
     </div>
 </section>
         <main class="container is-max-desktop content__spacing body__fullheight section">
-            <p>​	Normally, in C, when you want to overload a function, you have to create the same for the amount of types you want to handle.</p>
-<pre><code class="language-c">double mind(double, double);
-int mini(int, int);
-</code></pre>
-<pre><code class="language-c">int
-main(void)
+            <p>Après le tutoriel d'Inerska pour utiliser sscanf, il est dans mes principes de vous orienter vers votre processeur de commandes préféré.
+Mais... déjà : qu'est-ce qu'un processeur de commandes ?</p>
+<p>Très bonne question.
+De base quand vous souhaitez savoir si un joueur effectue une commande via la touche T &amp; commence son texte par un slash &quot;/&quot;, vous devez utiliser la callback
+<strong>OnPlayerCommandText(playerid, cmdtext[])</strong>
+seulement... cette méthode n'est pas la plus fluide qui existe, voici le temps éstimé d'une commande basique pour différents processeurs de commandes :</p>
+<p><img src="https://camo.githubusercontent.com/429633e77cda3178c74b1c2effa67991dad282609f220b0bbf72b26058e9b9d1/687474703a2f2f692e696d6775722e636f6d2f735659394742642e706e67" alt="Comparaison des processeurs de commandes" /></p>
+<blockquote>
+<p>Tableau de comparaison disponible sur le github de PawnCMD (<a href="https://github.com/katursis/Pawn.CMD">https://github.com/katursis/Pawn.CMD</a>)</p>
+</blockquote>
+<p>On peut voir que la méthode de base, donc strcmp (via OnPlayerCommandText) est loin d'être la plus rapide, tandis que Pawn.CMD est de loin la meilleure.</p>
+<p>Un petit exemple :</p>
+<h4 id="hello-world">Hello world!</h4>
+<pre><code class="language-c">#define c_white	0xFFFFFFFF		
+CMD:helloworld(playerid, params[])
 {
-    double x = 12.5;
-    double y = 22.0;
-    printf(&quot;The min value between 12.5 and 22.0 is %lf\n&quot;, mind(x, y));
+	SendClientMessage(playerid, c_white, &quot;Hello World !&quot;);
+	return true;
 }
 </code></pre>
-<p>But in modern C (since C11), you can &quot;iterate through types&quot; like a <code>switch</code> but for types, and thanks to that, you can overload a function like in a high-level programming language.</p>
-<pre><code class="language-c">double mind(double, double);
-int mini(int, int);
-
-
-#define min(a, b) _Generic((a), \
-					int: mini(a, b), \
-					double: mind(a, b)\
-				)
-
-</code></pre>
-<pre><code class="language-c">int
-main(void)
-{
-    int x = 12;
-    int y = 22;
-    printf(&quot;The minimal value between 12 and 22 is %d\n&quot;, min(x, y));
-    
-    double dx = 15.5;
-    double dy = 13.2;
-    printf(&quot;The minimal value between 15.5 and 13.2 is %lf\n&quot;, min(dx, dy));
-}
-</code></pre>
-<p>And with the same function <code>T min(T, T)</code> you can handle multiple types.</p>
-<p>Now you know about <code>_Generic(T)</code> try to overload your personal function like a maximum function <code>max(T, T)</code> with <code>_Generic()</code> macro, glhf.</p>
+<p>&quot;CMD:&quot; est la syntaxe utilisée par bon nombre de Command Processor comme ZCMD, Pawn.CMD, etc etc...</p>
 
         </main>
         
