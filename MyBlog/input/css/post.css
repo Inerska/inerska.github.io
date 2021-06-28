@@ -120,6 +120,11 @@ table, th, td {
     padding: 5px 5px;
 }
 
+p::after{
+    content: "\a";
+    white-space: pre;
+}
+
 .feed-article__top a{
     color: inherit;
 }
