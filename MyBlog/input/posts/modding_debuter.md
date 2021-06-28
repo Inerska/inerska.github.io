@@ -14,7 +14,9 @@ Plusieurs logiciels de conception 3D vous sont disponibles, gratuitement ou non 
 | Blender     | Oui                            			| Non                           | Gratuit                  |
 | Sketchup    | Non                                 	| Non                           | Gratuit                  |
 | Maya		  | Non                                 	| Non                           | Payant                   |
-| Et bien d'autres à découvrir grâce à notre cher ami : google.													   |
+
+Et bien d'autres à découvrir grâce à notre cher ami : google.	
+												   
 
 Info:  Vous pouvez utiliser des logiciels non compatible DFF pour faire vos modèles et basculer ceux-ci sur 3DS Max, la base du modding GTA SA.
 Info²: Je ne fournirais ici aucun lien de téléchargement vers 3DS Max, plusieurs liens sont disponibles sur google, je ne suis pas responsable de ce que vous téléchargez.
