@@ -51,7 +51,7 @@ sscanf("Hello world!", "ss", str, str2);
 
 > Tableau du wiki du repo sscanf d'Y-Less (https://github.com/Y-Less/sscanf#specifiers)
 
-*Pour vous rassurer, je n'ai jamais utiliser tous les spécifieurs proposés par sscanf.*
+*Pour vous rassurer, je n'ai jamais utilisé tous les spécifieurs proposés par sscanf.*
 
 Sachant qu'on souhaite "détecter" un joueur, on récupère le spécifieur `r` ou bien `u` si on souhaite ajouter les bots en prime, *ce qui est sympa avec ces spécifieurs, c'est qu'ils "détectent" aussi bien les noms que les IDs des joueurs*.
 
