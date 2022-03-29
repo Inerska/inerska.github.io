@@ -58,9 +58,9 @@
 </nav>
         
 <section class="container content__spacing feed-article__top section">
-    <p class="mb-5 article-meta__tag">Pawn</p>
-    <a href="/posts/pawncommandprocessor">
-        <h1><a href="/posts/pawncommandprocessor">Pawn moderne &#xBB; Les diff&#xE9;rents processeurs de commandes</a></h1>
+    <p class="mb-5 article-meta__tag">misc</p>
+    <a href="/posts/copilotonvs">
+        <h1><a href="/posts/copilotonvs">GitHub Copilot in Visual Studio 2022</a></h1>
     </a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
@@ -80,7 +80,7 @@
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                             clip-rule="evenodd" />
                     </svg>
-                        <p class="article-meta__author">Rams</p>
+                        <p class="article-meta__author">Alexis C. GRIDEL</p>
                 </div>
             </div>
         </div>
@@ -88,27 +88,29 @@
     </div>
 </section>
         <main class="container is-max-desktop content__spacing body__fullheight section">
-            <p>Après le tutoriel d'Inerska pour utiliser sscanf, il est dans mes principes de vous orienter vers votre processeur de commandes préféré.
-Mais... déjà : qu'est-ce qu'un processeur de commandes ?</p>
-<p>Très bonne question.
-De base quand vous souhaitez savoir si un joueur effectue une commande via la touche T &amp; commence son texte par un slash &quot;/&quot;, vous devez utiliser la callback
-<strong>OnPlayerCommandText(playerid, cmdtext[])</strong>
-seulement... cette méthode n'est pas la plus fluide qui existe, voici le temps éstimé d'une commande basique pour différents processeurs de commandes :</p>
-<p><img src="https://camo.githubusercontent.com/429633e77cda3178c74b1c2effa67991dad282609f220b0bbf72b26058e9b9d1/687474703a2f2f692e696d6775722e636f6d2f735659394742642e706e67" alt="Comparaison des processeurs de commandes" /></p>
-<blockquote>
-<p>Tableau de comparaison disponible sur le github de PawnCMD (<a href="https://github.com/katursis/Pawn.CMD">https://github.com/katursis/Pawn.CMD</a>)</p>
-</blockquote>
-<p>On peut voir que la méthode de base, donc strcmp (via OnPlayerCommandText) est loin d'être la plus rapide, tandis que Pawn.CMD est de loin la meilleure.</p>
-<p>Un petit exemple :</p>
-<h4 id="hello-world">Hello world!</h4>
-<pre><code class="language-c">#define c_white	0xFFFFFFFF		
-CMD:helloworld(playerid, params[])
-{
-	SendClientMessage(playerid, c_white, &quot;Hello World !&quot;);
-	return true;
-}
-</code></pre>
-<p>&quot;CMD:&quot; est la syntaxe utilisée par bon nombre de Command Processor comme ZCMD, Pawn.CMD, etc etc...</p>
+            <p>According to the exciting release of GitHub Copilot in Visual Studio 2022
+I'm gonna talk about it and my experience with this brand-new tool since its release.</p>
+<p>Powered with an artificial intelligence, GitHub Copilot is a new tool that helps you to generate code within your programming projects, based on your project's code.
+FYI, that's not a cheating tool that's going to write all the code for you, it's pretty bad for that. As an artificial neural network, the AI needs much data, to be able to learn from it and therefore to generate qualitative code for you.</p>
+<p>In comparison, I think that GitHub Copilot would be a better tool to use than Kite Ai Code, etc. That you can find in your favorite IDE.</p>
+<p>I'm using it for my projects, and I'm pretty happy with the result, sometimes when you don't really know a basic algorithm such as binary search, etc. GitHub Copilot will help you to generate code for you. I'm currently writing this article with help of Copilot, it's singing its own praises, that's hilarious.</p>
+<p><img src="https://pbs.twimg.com/media/FOr6UJ6WYBM38YQ?format=jpg&amp;name=medium" alt="example bad github copilot generation" />
+<em>Tweet from <a href="https://twitter.com/Miiitch">&#64;Miiitch</a></em><br />
+You can clearly see that without a ton of information, the generation code will be awful and useless.</p>
+<p><img src="https://pbs.twimg.com/media/FPB_F1hVgAAtOjg?format=png&amp;name=900x900" alt="example good github copilot generation" />
+<em>Tweet from <a href="https://twitter.com/mikecwangcn">&#64;mikecwangcn</a></em><br />
+In the opposite way, if you give enough information to github copilot, it will generate better code for you, that's awesome, don't you think ?</p>
+<p>FYI: GitHub Copilot is available in JetBrains products, Visual Studio 2022, Visual Studio Code, VIM (yes, and that's so cool!), and many other products.</p>
+<p>A lot of people are thinking that GitHub Copilot is a cheating tool, but I think that's not the case, that's pretty bad, that's wasting your time in a lot of scenarios, but to me, it could be really useful in a more complex project and more detailed context.
+Do enterprises forbid you to use it ? Or maybe they don't know it yet, I guess that we will have more information about it in the future.</p>
+<p>That won't be the last artificial intelligence powered code generation tool that would be created, that won't be the best one, I'm hyped to know how this type of technology will evolve, aren't you ?</p>
+<p><u>More information:</u></p>
+<ul>
+<li>More examples of code generation with GitHub Copilot: <code>#copilot</code>, <code>#githubCopilot</code> on Twitter</li>
+<li><a href="https://github.blog/2022-03-29-github-copilot-now-available-for-visual-studio-2022/">GitHub Copilot article in GitHub's Blog</a></li>
+<li><a href="https://copilot.github.com/">Github Copilot's website</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.Copilot">Github's Copilot extension page in Visual Studio</a></li>
+</ul>
 
         </main>
         
@@ -117,9 +119,9 @@ CMD:helloworld(playerid, params[])
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_config = function() {
-            this.page.identifier = 'pawncommandprocessor';
-            this.page.title = 'Pawn moderne &#xBB; Les diff&#xE9;rents processeurs de commandes';
-            this.page.url = '/posts/pawncommandprocessor';
+            this.page.identifier = 'copilotonvs';
+            this.page.title = 'GitHub Copilot in Visual Studio 2022';
+            this.page.url = '/posts/copilotonvs';
             // this.page.category_id = '';
         }
         var disqus_shortname = 'agdl-dev'; // required: replace example with your forum shortname
