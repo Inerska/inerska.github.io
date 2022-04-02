@@ -1,6 +1,6 @@
 title: Modern C » _Generic(T)
 tag: C
-published: 06/26/2021
+published: 6/26/2021
 ---
 
 ​	Normally, in C, when you want to overload a function, you have to create the same for the amount of types you want to handle.
