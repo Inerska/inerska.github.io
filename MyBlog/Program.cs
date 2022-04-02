@@ -3,20 +3,21 @@ using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
 
-namespace MyBlog;
-
-public static class Program
+namespace MyBlog
 {
-    public static async Task<int> Main(string[] args)
+    public static class Program
     {
-        return await Bootstrapper.Factory
-            .CreateWeb(args)
-            .DeployToGitHubPages(
-                "Inerska",
-                "inerska.github.io",
-                Config.FromSetting<string>("GITHUB_TOKEN")
-            )
-            .RunAsync()
-            .ConfigureAwait(true);
+        public static async Task<int> Main(string[] args)
+        {
+            return await Bootstrapper.Factory
+                .CreateWeb(args)
+                .DeployToGitHubPages(
+                    "Inerska",
+                    "inerska.github.io",
+                    Config.FromSetting<string>("GITHUB_TOKEN")
+                )
+                .RunAsync()
+                .ConfigureAwait(true);
+        }
     }
 }
