@@ -1,7 +1,7 @@
 title: Modding moderne » Débuter dans le modding GTA SA
 tag: Modding
 author: Rams
-published: 28/06/2021
+published: 06/28/2021
 ---
 
 Débuter dans le modding... ça paraît plutôt simple, sérieusement : _aligner des objets dans un environnement 3D_...

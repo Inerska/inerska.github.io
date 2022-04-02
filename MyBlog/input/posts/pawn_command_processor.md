@@ -1,7 +1,7 @@
 title: Pawn moderne » Les différents processeurs de commandes
 tag: Pawn
 author: Rams
-published: 28/06/2021
+published: 06/28/2021
 ---
 
 Après le tutoriel d'Inerska pour utiliser sscanf, il est dans mes principes de vous orienter vers votre processeur de commandes préféré.

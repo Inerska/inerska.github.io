@@ -1,6 +1,6 @@
 title: Pawn moderne » Utiliser sscanf
 tag: Pawn
-published: 27/06/2021
+published: 06/27/2021
 ---
 
 Ça y'est c'est le grand jour, vous souhaitez aujourd'hui vous attaquer aux commandes, la partie la plus fun d'un gamemode vous ne trouvez pas ? Surtout les commandes d'ordre administratifs, quel plaisir sadique de pouvoir bannir ses meilleurs amis avant même que votre formidable serveur ouvre ses portes.
