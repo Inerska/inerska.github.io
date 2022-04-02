@@ -7,8 +7,8 @@
     </a>
     <div class="feed-article__metas">
         <div class="is-flex is-justify-content-space-between">
-            <div class="is-flex is-align-items-center">
-                <div>
+            <div class="is-flex is-align-items-center is-flex-direction-row">
+                <div class="is-flex is-flex-direction-row is-justify-content-between">
                     <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 20 20"
                         fill="#000">
                         <path fill-rule="evenodd"
@@ -17,7 +17,7 @@
                     </svg>
                     <p class="article-meta__published-date">@Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>
                 </div>
-                <div class="article-meta__author__div">
+                <div class="article-meta__author__div is-flex is-flex-direction-row is-justify-content-between">
                     <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 20 20"
                         fill="#000">
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
