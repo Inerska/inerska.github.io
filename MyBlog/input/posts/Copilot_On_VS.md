@@ -1,6 +1,6 @@
 ﻿title: GitHub Copilot in Visual Studio 2022
 tag: misc
-published: 2022-03-30
+published: 3/30/2022
 ---
 According to the exciting release of GitHub Copilot in Visual Studio 2022
 I'm gonna talk about it and my experience with this brand-new tool since its release.
