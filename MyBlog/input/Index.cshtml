@@ -3,7 +3,7 @@ ArchiveSources: => "posts/*"
 ArchiveFilter: => Outputs.FilterSources("posts/*").ContainsById(Document)
 ArchiveDestination: >
   => GetInt("Index") <= 1 ? $"index.html" : $"page/{GetInt("Index")}.html"
-ArchivePageSize: 5
+ArchivePageSize: 7
 ArchiveOrderKey: Published
 ArchiveOrderDescending: true
 ArchiveTitle: => GetString("Title")
