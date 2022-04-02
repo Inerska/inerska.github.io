@@ -1,21 +1,22 @@
-﻿namespace MyBlog
-{
-    using System.Threading.Tasks;
-    using Statiq.App;
-    using Statiq.Common;
-    using Statiq.Web;
+﻿using System.Threading.Tasks;
+using Statiq.App;
+using Statiq.Common;
+using Statiq.Web;
 
-    public static class Program
+namespace MyBlog;
+
+public static class Program
+{
+    public static async Task<int> Main(string[] args)
     {
-        public static async Task<int> Main(string[] args) =>
-          await Bootstrapper.Factory
-              .CreateWeb(args)
-              .DeployToGitHubPages(
-                  "Inerska",
-                  "inerska.github.io",
-                  Config.FromSetting<string>("GITHUB_TOKEN")
-              )
-              .RunAsync()
-              .ConfigureAwait(true);
+        return await Bootstrapper.Factory
+            .CreateWeb(args)
+            .DeployToGitHubPages(
+                "Inerska",
+                "inerska.github.io",
+                Config.FromSetting<string>("GITHUB_TOKEN")
+            )
+            .RunAsync()
+            .ConfigureAwait(true);
     }
 }
