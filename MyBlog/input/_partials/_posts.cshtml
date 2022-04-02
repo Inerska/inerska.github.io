@@ -6,8 +6,8 @@
 }
 
 @{
-    IDocument newer = Model.GetDocument(Keys.Previous);
-    IDocument older = Model.GetDocument(Keys.Next);
+    var newer = Model.GetDocument(Keys.Previous);
+    var older = Model.GetDocument(Keys.Next);
 }
 @if (older != null || newer != null)
 {
