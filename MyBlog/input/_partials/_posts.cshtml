@@ -1,6 +1,6 @@
 @model IDocument
 
-@foreach (IDocument post in Model.GetChildren())
+@foreach (var post in Model.GetChildren())
 {
     @Html.Partial("_partials/_post", post)
 }
